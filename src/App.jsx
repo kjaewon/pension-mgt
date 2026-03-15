@@ -380,13 +380,17 @@ function MainApp() {
 
   return (
     <div className="min-h-screen bg-[#F5F7FA] pb-12">
-      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10 w-full">
+        <div className="w-full px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between">
+          <div 
+            className="flex items-center space-x-3 cursor-pointer group"
+            onClick={() => window.location.reload()}
+            title="메인 화면 새로고침"
+          >
+            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center group-hover:bg-indigo-700 transition-colors shadow-sm">
               <span className="text-white font-bold text-xl leading-none tracking-tighter">R</span>
             </div>
-            <h1 className="text-xl font-bold text-gray-900 tracking-tight">My Portfolio Rebalancer</h1>
+            <h1 className="text-xl font-bold text-gray-900 tracking-tight group-hover:text-indigo-600 transition-colors">My Portfolio Rebalancer</h1>
           </div>
           
           <div className="flex items-center space-x-4">
@@ -403,7 +407,7 @@ function MainApp() {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto p-4 sm:p-6 space-y-4 sm:space-y-6">
+      <main className="w-full p-4 sm:p-8 space-y-4 sm:space-y-6">
         <AccountManager
           accounts={accounts}
           activeAccount={activeAccount}
